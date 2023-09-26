@@ -15,10 +15,9 @@ class Conexion
         string bd = "directorio";
         string usuario = "root";
         //string password = "";
-        //+ "+ Passoword=''" + password + ""
 
-        string cadenaConexion = "Database=" + bd + "; " + "; DataSource=" +
-            servidor + "; User Id=" + usuario;
+        string cadenaConexion = "database=" + bd + ";server=" + servidor +
+            ";user id=" + usuario + ";password=" + password;
 
         try
         {
