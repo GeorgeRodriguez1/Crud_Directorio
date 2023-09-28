@@ -1,32 +1,30 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.IO;
 using System.Drawing.Imaging;
 
 namespace Crud_Directorio
 {
+    /// <summary>
+    /// Class <c>Form1</c> manage events related with Form1 Windows Form
+    /// </summary>
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// Method <c>Form1</c> initialize Windows Forms Form1 object
+        /// </summary>
+        /// <returns>void</returns>
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        // Aqui va el codigo de los botones
+        /// <summary>
+        /// Method <c>btnSave_Click</c> store a new employee into the database
+        /// </summary>
+        /// <returns>void</returns>
         private void btnSave_Click(object sender, EventArgs e)
         {
             try
@@ -76,7 +74,10 @@ namespace Crud_Directorio
                 MessageBox.Show("Datos incorrectos" + fex.Message);
             }
         }
-        
+        /// <summary>
+        /// Method <c>btnDelete_Click</c> delete an employee into from database
+        /// </summary>
+        /// <returns>void</returns>
         private void btnDelete_Click(object sender, EventArgs e)
         {
             string documento = cardId.Text;
@@ -97,6 +98,10 @@ namespace Crud_Directorio
             finally { conexionBD.Close(); }
         }
 
+        /// <summary>
+        /// Method <c>btnClear_Click</c> clean all input controls from the main Form1
+        /// </summary>
+        /// <returns>void</returns>
         private void btnClear_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -149,6 +154,11 @@ namespace Crud_Directorio
              
             }
 
+        /// <summary>
+        /// Method <c>profileImage_Click</c> open a select dialog to upload a image as
+        /// employee photo.
+        /// </summary>
+        /// <returns>void</returns>
         private void profileImage_Click(object sender, EventArgs e)
         {
             OpenFileDialog foto = new OpenFileDialog();
@@ -165,6 +175,11 @@ namespace Crud_Directorio
             Console.WriteLine(profileImage.Image);
         }
 
+        /// <summary>
+        /// Method <c>cardId_KeyPress</c> search for an employee using their 
+        /// documentation id.
+        /// </summary>
+        /// <returns>void</returns>
         private void cardId_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!string.IsNullOrEmpty(cardId.Text))
@@ -213,7 +228,11 @@ namespace Crud_Directorio
                 }
             }
         }
-        
+        /// <summary>
+        /// Method <c>guardarFoto</c> store an employee's photo into machine 
+        /// filesystem
+        /// </summary>
+        /// <returns>string</returns>
         private string guardarFoto(PictureBox foto, string NumerodeDocumento)
         {
             string fotoRuta = @"C:\\profileImages\\" + NumerodeDocumento + ".jpeg";

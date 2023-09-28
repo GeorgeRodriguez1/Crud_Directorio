@@ -242,7 +242,6 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Directorio ";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.profileImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
