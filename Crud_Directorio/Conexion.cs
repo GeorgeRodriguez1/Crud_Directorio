@@ -1,14 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 
+/// <summary>Class <c>Conexion</c> to connect with MySQL db
+/// </summary>
 class Conexion
 {
+    /// <summary>
+    /// Method <c>MySqlConnection</c> creates the MySQL connection object
+    /// </summary>
+    /// <returns>MySqlConnection object</returns>
     public static MySqlConnection conexion()
     {
         string servidor = "localhost";
@@ -26,8 +26,9 @@ class Conexion
         }
         catch (MySqlException ex)
         { 
-           Console.WriteLine("Error: "+ex.Message);
-            return null; }
+            Console.WriteLine("Error: "+ex.Message);
+            return null; 
+        }
     }
 
 }
