@@ -14,7 +14,7 @@ class Conexion
         string servidor = "localhost";
         string bd = "directorio";
         string usuario = "root";
-        //string password = "";
+        string password = "root123";
 
         string cadenaConexion = "database=" + bd + ";server=" + servidor +
             ";user id=" + usuario + ";password=" + password;
